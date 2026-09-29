@@ -1,0 +1,10 @@
+schema: spec-driven
+context: |
+  CampusClaw 教学材料管理实验。Flask + SQLite + bcrypt。
+  按班级隔离，教师写入，学生只读。先规约后实现。
+  本交付包含第2课规约及用户要求的可运行实现与真实证据。
+rules:
+  specs:
+    - 每个 Requirement 含可复现的 Scenario。
+  tasks:
+    - 区分已验证与未执行，禁止把未跑的 Docker 验收标为通过。

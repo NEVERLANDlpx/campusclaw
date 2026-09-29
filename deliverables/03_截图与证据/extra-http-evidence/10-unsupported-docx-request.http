@@ -1,0 +1,19 @@
+POST /api/materials/upload HTTP/1.1
+Host: 127.0.0.1:8080
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: [REDACTED]
+Content-Type: multipart/form-data; boundary=CampusClawBoundary5f8d2ee5b28b829f0e9f
+Content-Length: 347
+
+--CampusClawBoundary5f8d2ee5b28b829f0e9f
+Content-Disposition: form-data; name="csrf_token"
+
+bmqZhpjPrtOtuHEgH4G5PXm8nowJFJ-nwkgIconB_oU
+--CampusClawBoundary5f8d2ee5b28b829f0e9f
+Content-Disposition: form-data; name="file"; filename="lesson.docx"
+Content-Type: application/octet-stream
+
+PKdemo
+--CampusClawBoundary5f8d2ee5b28b829f0e9f--

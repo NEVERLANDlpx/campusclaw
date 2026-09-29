@@ -1,0 +1,6 @@
+GET /login HTTP/1.1
+Host: 127.0.0.1:8080
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+

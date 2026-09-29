@@ -1,0 +1,165 @@
+{
+  "captured_at": "2026-09-29T13:19:23.099240+00:00",
+  "base": "http://127.0.0.1:8082",
+  "records": [
+    {
+      "label": "01-anonymous-api",
+      "method": "GET",
+      "path": "/api/me",
+      "status": 401,
+      "response_bytes": 25
+    },
+    {
+      "label": "02-anonymous-download",
+      "method": "GET",
+      "path": "/api/materials/1/download",
+      "status": 401,
+      "response_bytes": 25
+    },
+    {
+      "label": "03-public-health",
+      "method": "GET",
+      "path": "/health",
+      "status": 200,
+      "response_bytes": 32
+    },
+    {
+      "label": "04-teacher-login-page",
+      "method": "GET",
+      "path": "/login",
+      "status": 200,
+      "response_bytes": 2951
+    },
+    {
+      "label": "04-teacher-login",
+      "method": "POST",
+      "path": "/login",
+      "status": 302,
+      "response_bytes": 207
+    },
+    {
+      "label": "04-teacher-identity",
+      "method": "GET",
+      "path": "/api/me",
+      "status": 200,
+      "response_bytes": 180
+    },
+    {
+      "label": "05-teacher-list",
+      "method": "GET",
+      "path": "/api/materials?class_id=2",
+      "status": 200,
+      "response_bytes": 860
+    },
+    {
+      "label": "06-teacher-download",
+      "method": "GET",
+      "path": "/api/materials/1/download",
+      "status": 200,
+      "response_bytes": 231
+    },
+    {
+      "label": "07-teacher-cross-class",
+      "method": "GET",
+      "path": "/api/materials/3/download?class_id=2",
+      "status": 404,
+      "response_bytes": 43
+    },
+    {
+      "label": "08-valid-md-upload",
+      "method": "POST",
+      "path": "/api/materials/upload",
+      "status": 201,
+      "response_bytes": 77
+    },
+    {
+      "label": "09-unsupported-pdf",
+      "method": "POST",
+      "path": "/api/materials/upload",
+      "status": 400,
+      "response_bytes": 56
+    },
+    {
+      "label": "10-unsupported-docx",
+      "method": "POST",
+      "path": "/api/materials/upload",
+      "status": 400,
+      "response_bytes": 56
+    },
+    {
+      "label": "11-address-bar-get-upload",
+      "method": "GET",
+      "path": "/api/materials/upload",
+      "status": 405,
+      "response_bytes": 25
+    },
+    {
+      "label": "12-teacher-logout",
+      "method": "POST",
+      "path": "/logout",
+      "status": 302,
+      "response_bytes": 199
+    },
+    {
+      "label": "13-student-login-page",
+      "method": "GET",
+      "path": "/login",
+      "status": 200,
+      "response_bytes": 2951
+    },
+    {
+      "label": "13-student-login",
+      "method": "POST",
+      "path": "/login",
+      "status": 302,
+      "response_bytes": 207
+    },
+    {
+      "label": "13-student-identity",
+      "method": "GET",
+      "path": "/api/me",
+      "status": 200,
+      "response_bytes": 182
+    },
+    {
+      "label": "14-student-download",
+      "method": "GET",
+      "path": "/api/materials/7/download",
+      "status": 200,
+      "response_bytes": 72
+    },
+    {
+      "label": "15-student-upload-denied",
+      "method": "POST",
+      "path": "/api/materials/upload",
+      "status": 403,
+      "response_bytes": 70
+    },
+    {
+      "label": "16-student-cross-class",
+      "method": "GET",
+      "path": "/api/materials/3/download",
+      "status": 404,
+      "response_bytes": 43
+    },
+    {
+      "label": "17-student-logout",
+      "method": "POST",
+      "path": "/logout",
+      "status": 302,
+      "response_bytes": 199
+    },
+    {
+      "label": "18-revoked-download",
+      "method": "GET",
+      "path": "/api/materials/7/download",
+      "status": 401,
+      "response_bytes": 25
+    }
+  ],
+  "download_material_id": 7,
+  "uploaded_sha256": "53327bd6dabcb1165b0a52d20d6b64ee32a6b61fd979ff159e147659bdae56b2",
+  "downloaded_sha256": "53327bd6dabcb1165b0a52d20d6b64ee32a6b61fd979ff159e147659bdae56b2",
+  "byte_identical": true,
+  "cookies_revoked": true
+}

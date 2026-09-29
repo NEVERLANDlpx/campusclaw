@@ -1,0 +1,34 @@
+HTTP/1.1 200 OK
+Server: Werkzeug/3.1.3 Python/3.13.5
+Date: Tue, 29 Sep 2026 08:17:12 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 2951
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+Set-Cookie: [REDACTED]
+Connection: close
+
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CampusClaw · 班级知识空间</title><link rel="stylesheet" href="/static/app.css"><script src="/static/app.js" defer></script></head>
+<body>
+<div class="login-page">
+<section class="login-story">
+<a class="brand" href="/login"><span class="brand-mark">C<span>✦</span></span><span>CampusClaw<small>班级知识空间</small></span></a>
+<div class="story-main"><span class="eyebrow">TEACH TOGETHER. GROW TOGETHER.</span><h1>让每一份知识，<br>回到它的班级。</h1><p>从一份讲义开始，连接教师与学生。<br>清晰的身份，安心的共享，有序的学习。</p>
+<div class="orbital"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit-core">C<span>✦</span><small>CAMPUSCLAW</small></div><div class="float-card card-a"><span class="mini-icon">文</span><div>教学材料<small>上传 · 解析 · 入库</small></div><b>↗</b></div><div class="float-card card-b"><span class="mini-icon green">✓</span><div>只在本班共享<small>每次访问，都有边界</small></div></div><div class="spark s1">✦</div><div class="spark s2">+</div></div>
+</div><footer>互联网软件开发技术与实践<span>SDD / CampusClaw 实验</span></footer>
+</section>
+<main class="login-form-area"><div class="login-top">校园教学协作平台 <span class="tag">课程实验版</span></div><div class="login-box"><span class="eyebrow dark">WELCOME BACK</span><h2>欢迎回到班级</h2><p class="muted">使用你的课程账号，进入专属知识空间。</p>
+
+<form method="post" action="/login"><input type="hidden" name="csrf_token" value="WDoCRgm9ip5LJf1O5Fokm9k-wQYOoK-FBeB1ycJlNtc"><label for="username">账号</label><input id="username" name="username" autocomplete="username" placeholder="请输入教师或学生账号" required maxlength="100"><label for="password">密码</label><div class="password-field"><input id="password" type="password" name="password" autocomplete="current-password" placeholder="请输入登录密码" required maxlength="72"><button type="button" id="toggle-password" aria-label="显示密码">显示</button></div><button class="button primary full" type="submit">登录知识空间 <span>→</span></button></form>
+<div class="demo-box"><div class="demo-heading">演示账号 <span>点击填入账号</span></div><div class="account-chips"><button type="button" data-account="teacher_a">教师 A</button><button type="button" data-account="student_a1">学生 A1</button><button type="button" data-account="student_b1">学生 B1</button></div><p>演示密码 <code>Campus@2026</code></p></div>
+<div class="login-note"><span>◇</span> 教师可上传与管理本班材料，学生仅可阅读。</div>
+</div><div class="login-bottom">身份认证 · 角色权限 · 班级隔离</div></main>
+</div>
+</body>
+</html>

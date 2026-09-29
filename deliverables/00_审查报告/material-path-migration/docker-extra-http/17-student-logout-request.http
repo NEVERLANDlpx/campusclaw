@@ -1,0 +1,10 @@
+POST /logout HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=.eJwdjTsOwjAQBe-ytQsSSwhcQgoaIFIKPo1l8EaJCHbYXSMRxN0xlE-jmfcGOyLdXcAgYIQSKnBJOvtE4j4GMKWC6-CYbe_BFHkwtVbiDTODatLTzF9QR2QcG-oOeFzpdYununrMG9mdl5tXsa33aQEKKA6YJZbkf3cKEiP9u-XnC9nKLpo.aru62g.yohFmg09yWi9pq4afOsZrITzsvE
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 54
+
+csrf_token=Dz3z0dbe3oesepSrhWeXB3CfeYPDq6StNZ9Hy1MPOu8

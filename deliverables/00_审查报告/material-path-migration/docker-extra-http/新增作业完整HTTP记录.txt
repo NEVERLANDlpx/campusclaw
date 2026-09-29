@@ -1,0 +1,750 @@
+新增作业真实HTTP记录
+采集时间：2026-09-29T13:19:23.099240+00:00
+以下响应来自实际运行服务；Cookie已在采集结束退出撤销。
+上传与下载原文件SHA-256：53327bd6dabcb1165b0a52d20d6b64ee32a6b61fd979ff159e147659bdae56b2
+字节完全一致：True
+
+======================================================================
+01-anonymous-api: GET /api/me → 401
+--- Request ---
+GET /api/me HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+
+
+--- Response ---
+HTTP/1.1 401 UNAUTHORIZED
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:20 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 25
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+
+{"error":"请先登录"}
+
+
+======================================================================
+02-anonymous-download: GET /api/materials/1/download → 401
+--- Request ---
+GET /api/materials/1/download HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+
+
+--- Response ---
+HTTP/1.1 401 UNAUTHORIZED
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:20 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 25
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+
+{"error":"请先登录"}
+
+
+======================================================================
+03-public-health: GET /health → 200
+--- Request ---
+GET /health HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+
+
+--- Response ---
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:21 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 32
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+
+{"database":"ok","status":"ok"}
+
+
+======================================================================
+04-teacher-login-page: GET /login → 200
+--- Request ---
+GET /login HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+
+
+--- Response ---
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:21 GMT
+Connection: close
+Content-Type: text/html; charset=utf-8
+Content-Length: 2951
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+Set-Cookie: campusclaw_session=eyJjc3JmX3Rva2VuIjoiN3dhU191QU1VdjZRLTIxUjNoQW1sRVVhT3RxTGNCanNGaUkwZWkyYmY1WSJ9.aru62Q.czR_Hcfl4879ikmwCTfWll5n6QY; HttpOnly; Path=/; SameSite=Lax
+
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CampusClaw · 班级知识空间</title><link rel="stylesheet" href="/static/app.css"><script src="/static/app.js" defer></script></head>
+<body>
+<div class="login-page">
+<section class="login-story">
+<a class="brand" href="/login"><span class="brand-mark">C<span>✦</span></span><span>CampusClaw<small>班级知识空间</small></span></a>
+<div class="story-main"><span class="eyebrow">TEACH TOGETHER. GROW TOGETHER.</span><h1>让每一份知识，<br>回到它的班级。</h1><p>从一份讲义开始，连接教师与学生。<br>清晰的身份，安心的共享，有序的学习。</p>
+<div class="orbital"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit-core">C<span>✦</span><small>CAMPUSCLAW</small></div><div class="float-card card-a"><span class="mini-icon">文</span><div>教学材料<small>上传 · 解析 · 入库</small></div><b>↗</b></div><div class="float-card card-b"><span class="mini-icon green">✓</span><div>只在本班共享<small>每次访问，都有边界</small></div></div><div class="spark s1">✦</div><div class="spark s2">+</div></div>
+</div><footer>互联网软件开发技术与实践<span>SDD / CampusClaw 实验</span></footer>
+</section>
+<main class="login-form-area"><div class="login-top">校园教学协作平台 <span class="tag">课程实验版</span></div><div class="login-box"><span class="eyebrow dark">WELCOME BACK</span><h2>欢迎回到班级</h2><p class="muted">使用你的课程账号，进入专属知识空间。</p>
+
+<form method="post" action="/login"><input type="hidden" name="csrf_token" value="7waS_uAMUv6Q-21R3hAmlEUaOtqLcBjsFiI0ei2bf5Y"><label for="username">账号</label><input id="username" name="username" autocomplete="username" placeholder="请输入教师或学生账号" required maxlength="100"><label for="password">密码</label><div class="password-field"><input id="password" type="password" name="password" autocomplete="current-password" placeholder="请输入登录密码" required maxlength="72"><button type="button" id="toggle-password" aria-label="显示密码">显示</button></div><button class="button primary full" type="submit">登录知识空间 <span>→</span></button></form>
+<div class="demo-box"><div class="demo-heading">演示账号 <span>点击填入账号</span></div><div class="account-chips"><button type="button" data-account="teacher_a">教师 A</button><button type="button" data-account="student_a1">学生 A1</button><button type="button" data-account="student_b1">学生 B1</button></div><p>演示密码 <code>Campus@2026</code></p></div>
+<div class="login-note"><span>◇</span> 教师可上传与管理本班材料，学生仅可阅读。</div>
+</div><div class="login-bottom">身份认证 · 角色权限 · 班级隔离</div></main>
+</div>
+</body>
+</html>
+
+======================================================================
+04-teacher-login: POST /login → 302
+--- Request ---
+POST /login HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=eyJjc3JmX3Rva2VuIjoiN3dhU191QU1VdjZRLTIxUjNoQW1sRVVhT3RxTGNCanNGaUkwZWkyYmY1WSJ9.aru62Q.czR_Hcfl4879ikmwCTfWll5n6QY
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 96
+
+username=teacher_a&password=Campus%402026&csrf_token=7waS_uAMUv6Q-21R3hAmlEUaOtqLcBjsFiI0ei2bf5Y
+--- Response ---
+HTTP/1.1 302 FOUND
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:21 GMT
+Connection: close
+Content-Type: text/html; charset=utf-8
+Content-Length: 207
+Location: /materials
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+Set-Cookie: campusclaw_session=.eJwljMsKwjAQRf9l1llUxCLZ-aaFIgjduAkhGWmwJs1MUqTivxtwec_h3A-oCemlPfoEMlFGATqnQc1I7IIHWQswo2ZWzoJclcH0UCk8sTg498fZXlt9stUbt7cYO24WbM0hVxe_7HfWbeqG1328GxBAYcQSJdRmQCogM9L_9_sD03QugA.aru62Q.rtc6M7SoRFG1epl1ruDm0GY17_g; Expires=Tue, 29 Sep 2026 15:19:21 GMT; HttpOnly; Path=/; SameSite=Lax
+
+<!doctype html>
+<html lang=en>
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to the target URL: <a href="/materials">/materials</a>. If not, click the link.
+
+
+======================================================================
+04-teacher-identity: GET /api/me → 200
+--- Request ---
+GET /api/me HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=.eJwljMsKwjAQRf9l1llUxCLZ-aaFIgjduAkhGWmwJs1MUqTivxtwec_h3A-oCemlPfoEMlFGATqnQc1I7IIHWQswo2ZWzoJclcH0UCk8sTg498fZXlt9stUbt7cYO24WbM0hVxe_7HfWbeqG1328GxBAYcQSJdRmQCogM9L_9_sD03QugA.aru62Q.rtc6M7SoRFG1epl1ruDm0GY17_g
+
+
+--- Response ---
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:21 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 180
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+
+{"csrf_token":"FUDvdOJaEd0xe8RqqMsIzeJcCu0GnzBAdi56Is3UqZc","user":{"class_id":1,"class_name":"班级 A","display_name":"教师 A","id":1,"role":"teacher","username":"teacher_a"}}
+
+
+======================================================================
+05-teacher-list: GET /api/materials?class_id=2 → 200
+--- Request ---
+GET /api/materials?class_id=2 HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=.eJwljMsKwjAQRf9l1llUxCLZ-aaFIgjduAkhGWmwJs1MUqTivxtwec_h3A-oCemlPfoEMlFGATqnQc1I7IIHWQswo2ZWzoJclcH0UCk8sTg498fZXlt9stUbt7cYO24WbM0hVxe_7HfWbeqG1328GxBAYcQSJdRmQCogM9L_9_sD03QugA.aru62Q.rtc6M7SoRFG1epl1ruDm0GY17_g
+
+
+--- Response ---
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:21 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 860
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+
+{"materials":[{"class_id":1,"created_at":"2026-09-29 08:41:10","id":6,"original_name":"download-proof.md","size_bytes":72,"title":"download-proof","uploader":"教师 A"},{"class_id":1,"created_at":"2026-09-29 08:38:05","id":5,"original_name":"browser-upload.txt","size_bytes":83,"title":"浏览器网络验收材料","uploader":"教师 A"},{"class_id":1,"created_at":"2026-09-29 08:37:27","id":4,"original_name":"browser-upload.txt","size_bytes":83,"title":"浏览器网络验收材料","uploader":"教师 A"},{"class_id":1,"created_at":"2026-09-29 08:16:50","id":2,"original_name":"http-lab.txt","size_bytes":200,"title":"A 班 · HTTP 登录实验任务","uploader":"教师 A"},{"class_id":1,"created_at":"2026-09-29 08:16:50","id":1,"original_name":"sdd-guide.md","size_bytes":225,"title":"A 班 · SDD 与规约驱动开发导学","uploader":"教师 A"}]}
+
+
+======================================================================
+06-teacher-download: GET /api/materials/1/download → 200
+--- Request ---
+GET /api/materials/1/download HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=.eJwljMsKwjAQRf9l1llUxCLZ-aaFIgjduAkhGWmwJs1MUqTivxtwec_h3A-oCemlPfoEMlFGATqnQc1I7IIHWQswo2ZWzoJclcH0UCk8sTg498fZXlt9stUbt7cYO24WbM0hVxe_7HfWbeqG1328GxBAYcQSJdRmQCogM9L_9_sD03QugA.aru62Q.rtc6M7SoRFG1epl1ruDm0GY17_g
+
+
+--- Response ---
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:21 GMT
+Connection: close
+Content-Disposition: attachment; filename=sdd-guide.md
+Content-Type: application/octet-stream
+Content-Length: 231
+Last-Modified: Tue, 29 Sep 2026 08:16:50 GMT
+Cache-Control: no-store
+Expires: Tue, 29 Sep 2026 13:19:21 GMT
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Vary: Cookie
+
+# SDD 与规约驱动开发
+
+先明确需求、边界与验收，再实现代码。
+
+本次实验：用户登录、角色权限、班级隔离、材料上传。
+
+思考：浏览器如何在后续请求中携带登录身份？
+
+======================================================================
+07-teacher-cross-class: GET /api/materials/3/download?class_id=2 → 404
+--- Request ---
+GET /api/materials/3/download?class_id=2 HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=.eJwljMsKwjAQRf9l1llUxCLZ-aaFIgjduAkhGWmwJs1MUqTivxtwec_h3A-oCemlPfoEMlFGATqnQc1I7IIHWQswo2ZWzoJclcH0UCk8sTg498fZXlt9stUbt7cYO24WbM0hVxe_7HfWbeqG1328GxBAYcQSJdRmQCogM9L_9_sD03QugA.aru62Q.rtc6M7SoRFG1epl1ruDm0GY17_g
+
+
+--- Response ---
+HTTP/1.1 404 NOT FOUND
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:21 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 43
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+
+{"error":"材料不存在或不可访问"}
+
+
+======================================================================
+08-valid-md-upload: POST /api/materials/upload → 201
+--- Request ---
+POST /api/materials/upload HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=.eJwljMsKwjAQRf9l1llUxCLZ-aaFIgjduAkhGWmwJs1MUqTivxtwec_h3A-oCemlPfoEMlFGATqnQc1I7IIHWQswo2ZWzoJclcH0UCk8sTg498fZXlt9stUbt7cYO24WbM0hVxe_7HfWbeqG1328GxBAYcQSJdRmQCogM9L_9_sD03QugA.aru62Q.rtc6M7SoRFG1epl1ruDm0GY17_g
+Content-Type: multipart/form-data; boundary=CampusClawBoundary5209fb9a2167d473e1c1
+Content-Length: 417
+
+--CampusClawBoundary5209fb9a2167d473e1c1
+Content-Disposition: form-data; name="csrf_token"
+
+FUDvdOJaEd0xe8RqqMsIzeJcCu0GnzBAdi56Is3UqZc
+--CampusClawBoundary5209fb9a2167d473e1c1
+Content-Disposition: form-data; name="file"; filename="download-proof.md"
+Content-Type: application/octet-stream
+
+﻿# 原文件下载验收
+中文内容与原始字节保持一致。
+
+--CampusClawBoundary5209fb9a2167d473e1c1--
+
+--- Response ---
+HTTP/1.1 201 CREATED
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:21 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 77
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+
+{"class_id":1,"material_id":7,"message":"材料已上传并写入知识库"}
+
+
+======================================================================
+09-unsupported-pdf: POST /api/materials/upload → 400
+--- Request ---
+POST /api/materials/upload HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=.eJwljMsKwjAQRf9l1llUxCLZ-aaFIgjduAkhGWmwJs1MUqTivxtwec_h3A-oCemlPfoEMlFGATqnQc1I7IIHWQswo2ZWzoJclcH0UCk8sTg498fZXlt9stUbt7cYO24WbM0hVxe_7HfWbeqG1328GxBAYcQSJdRmQCogM9L_9_sD03QugA.aru62Q.rtc6M7SoRFG1epl1ruDm0GY17_g
+Content-Type: multipart/form-data; boundary=CampusClawBoundarya7c8e4e8455ed0800c6c
+Content-Length: 352
+
+--CampusClawBoundarya7c8e4e8455ed0800c6c
+Content-Disposition: form-data; name="csrf_token"
+
+FUDvdOJaEd0xe8RqqMsIzeJcCu0GnzBAdi56Is3UqZc
+--CampusClawBoundarya7c8e4e8455ed0800c6c
+Content-Disposition: form-data; name="file"; filename="lesson.pdf"
+Content-Type: application/octet-stream
+
+%PDF-1.4
+Demo
+
+--CampusClawBoundarya7c8e4e8455ed0800c6c--
+
+--- Response ---
+HTTP/1.1 400 BAD REQUEST
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:21 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 56
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+
+{"error":"仅支持 UTF-8 编码的 txt 和 md 文件"}
+
+
+======================================================================
+10-unsupported-docx: POST /api/materials/upload → 400
+--- Request ---
+POST /api/materials/upload HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=.eJwljMsKwjAQRf9l1llUxCLZ-aaFIgjduAkhGWmwJs1MUqTivxtwec_h3A-oCemlPfoEMlFGATqnQc1I7IIHWQswo2ZWzoJclcH0UCk8sTg498fZXlt9stUbt7cYO24WbM0hVxe_7HfWbeqG1328GxBAYcQSJdRmQCogM9L_9_sD03QugA.aru62Q.rtc6M7SoRFG1epl1ruDm0GY17_g
+Content-Type: multipart/form-data; boundary=CampusClawBoundarya2d1862205b490c87c0d
+Content-Length: 347
+
+--CampusClawBoundarya2d1862205b490c87c0d
+Content-Disposition: form-data; name="csrf_token"
+
+FUDvdOJaEd0xe8RqqMsIzeJcCu0GnzBAdi56Is3UqZc
+--CampusClawBoundarya2d1862205b490c87c0d
+Content-Disposition: form-data; name="file"; filename="lesson.docx"
+Content-Type: application/octet-stream
+
+PKdemo
+--CampusClawBoundarya2d1862205b490c87c0d--
+
+--- Response ---
+HTTP/1.1 400 BAD REQUEST
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:21 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 56
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+
+{"error":"仅支持 UTF-8 编码的 txt 和 md 文件"}
+
+
+======================================================================
+11-address-bar-get-upload: GET /api/materials/upload → 405
+--- Request ---
+GET /api/materials/upload HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=.eJwljMsKwjAQRf9l1llUxCLZ-aaFIgjduAkhGWmwJs1MUqTivxtwec_h3A-oCemlPfoEMlFGATqnQc1I7IIHWQswo2ZWzoJclcH0UCk8sTg498fZXlt9stUbt7cYO24WbM0hVxe_7HfWbeqG1328GxBAYcQSJdRmQCogM9L_9_sD03QugA.aru62Q.rtc6M7SoRFG1epl1ruDm0GY17_g
+
+
+--- Response ---
+HTTP/1.1 405 METHOD NOT ALLOWED
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:21 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 25
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+
+{"error":"请求失败"}
+
+
+======================================================================
+12-teacher-logout: POST /logout → 302
+--- Request ---
+POST /logout HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=.eJwljMsKwjAQRf9l1llUxCLZ-aaFIgjduAkhGWmwJs1MUqTivxtwec_h3A-oCemlPfoEMlFGATqnQc1I7IIHWQswo2ZWzoJclcH0UCk8sTg498fZXlt9stUbt7cYO24WbM0hVxe_7HfWbeqG1328GxBAYcQSJdRmQCogM9L_9_sD03QugA.aru62Q.rtc6M7SoRFG1epl1ruDm0GY17_g
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 54
+
+csrf_token=FUDvdOJaEd0xe8RqqMsIzeJcCu0GnzBAdi56Is3UqZc
+--- Response ---
+HTTP/1.1 302 FOUND
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:22 GMT
+Connection: close
+Content-Type: text/html; charset=utf-8
+Content-Length: 199
+Location: /login
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+Set-Cookie: campusclaw_session=; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; HttpOnly; Path=/; SameSite=Lax
+
+<!doctype html>
+<html lang=en>
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to the target URL: <a href="/login">/login</a>. If not, click the link.
+
+
+======================================================================
+13-student-login-page: GET /login → 200
+--- Request ---
+GET /login HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+
+
+--- Response ---
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:22 GMT
+Connection: close
+Content-Type: text/html; charset=utf-8
+Content-Length: 2951
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+Set-Cookie: campusclaw_session=eyJjc3JmX3Rva2VuIjoiek94dUs4c3dMbVZVYzhtaDhCcjFGM3dqa2thSDZfSEZyYlJkVlRnMF9sZyJ9.aru62g.qpfUga_MJkiXmKEnEJLPpiB_7CE; HttpOnly; Path=/; SameSite=Lax
+
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CampusClaw · 班级知识空间</title><link rel="stylesheet" href="/static/app.css"><script src="/static/app.js" defer></script></head>
+<body>
+<div class="login-page">
+<section class="login-story">
+<a class="brand" href="/login"><span class="brand-mark">C<span>✦</span></span><span>CampusClaw<small>班级知识空间</small></span></a>
+<div class="story-main"><span class="eyebrow">TEACH TOGETHER. GROW TOGETHER.</span><h1>让每一份知识，<br>回到它的班级。</h1><p>从一份讲义开始，连接教师与学生。<br>清晰的身份，安心的共享，有序的学习。</p>
+<div class="orbital"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit-core">C<span>✦</span><small>CAMPUSCLAW</small></div><div class="float-card card-a"><span class="mini-icon">文</span><div>教学材料<small>上传 · 解析 · 入库</small></div><b>↗</b></div><div class="float-card card-b"><span class="mini-icon green">✓</span><div>只在本班共享<small>每次访问，都有边界</small></div></div><div class="spark s1">✦</div><div class="spark s2">+</div></div>
+</div><footer>互联网软件开发技术与实践<span>SDD / CampusClaw 实验</span></footer>
+</section>
+<main class="login-form-area"><div class="login-top">校园教学协作平台 <span class="tag">课程实验版</span></div><div class="login-box"><span class="eyebrow dark">WELCOME BACK</span><h2>欢迎回到班级</h2><p class="muted">使用你的课程账号，进入专属知识空间。</p>
+
+<form method="post" action="/login"><input type="hidden" name="csrf_token" value="zOxuK8swLmVUc8mh8Br1F3wjkkaH6_HFrbRdVTg0_lg"><label for="username">账号</label><input id="username" name="username" autocomplete="username" placeholder="请输入教师或学生账号" required maxlength="100"><label for="password">密码</label><div class="password-field"><input id="password" type="password" name="password" autocomplete="current-password" placeholder="请输入登录密码" required maxlength="72"><button type="button" id="toggle-password" aria-label="显示密码">显示</button></div><button class="button primary full" type="submit">登录知识空间 <span>→</span></button></form>
+<div class="demo-box"><div class="demo-heading">演示账号 <span>点击填入账号</span></div><div class="account-chips"><button type="button" data-account="teacher_a">教师 A</button><button type="button" data-account="student_a1">学生 A1</button><button type="button" data-account="student_b1">学生 B1</button></div><p>演示密码 <code>Campus@2026</code></p></div>
+<div class="login-note"><span>◇</span> 教师可上传与管理本班材料，学生仅可阅读。</div>
+</div><div class="login-bottom">身份认证 · 角色权限 · 班级隔离</div></main>
+</div>
+</body>
+</html>
+
+======================================================================
+13-student-login: POST /login → 302
+--- Request ---
+POST /login HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=eyJjc3JmX3Rva2VuIjoiek94dUs4c3dMbVZVYzhtaDhCcjFGM3dqa2thSDZfSEZyYlJkVlRnMF9sZyJ9.aru62g.qpfUga_MJkiXmKEnEJLPpiB_7CE
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 97
+
+username=student_a1&password=Campus%402026&csrf_token=zOxuK8swLmVUc8mh8Br1F3wjkkaH6_HFrbRdVTg0_lg
+--- Response ---
+HTTP/1.1 302 FOUND
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:22 GMT
+Connection: close
+Content-Type: text/html; charset=utf-8
+Content-Length: 207
+Location: /materials
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+Set-Cookie: campusclaw_session=.eJwdjTsOwjAQBe-ytQsSSwhcQgoaIFIKPo1l8EaJCHbYXSMRxN0xlE-jmfcGOyLdXcAgYIQSKnBJOvtE4j4GMKWC6-CYbe_BFHkwtVbiDTODatLTzF9QR2QcG-oOeFzpdYununrMG9mdl5tXsa33aQEKKA6YJZbkf3cKEiP9u-XnC9nKLpo.aru62g.yohFmg09yWi9pq4afOsZrITzsvE; Expires=Tue, 29 Sep 2026 15:19:22 GMT; HttpOnly; Path=/; SameSite=Lax
+
+<!doctype html>
+<html lang=en>
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to the target URL: <a href="/materials">/materials</a>. If not, click the link.
+
+
+======================================================================
+13-student-identity: GET /api/me → 200
+--- Request ---
+GET /api/me HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=.eJwdjTsOwjAQBe-ytQsSSwhcQgoaIFIKPo1l8EaJCHbYXSMRxN0xlE-jmfcGOyLdXcAgYIQSKnBJOvtE4j4GMKWC6-CYbe_BFHkwtVbiDTODatLTzF9QR2QcG-oOeFzpdYununrMG9mdl5tXsa33aQEKKA6YJZbkf3cKEiP9u-XnC9nKLpo.aru62g.yohFmg09yWi9pq4afOsZrITzsvE
+
+
+--- Response ---
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:22 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 182
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+
+{"csrf_token":"Dz3z0dbe3oesepSrhWeXB3CfeYPDq6StNZ9Hy1MPOu8","user":{"class_id":1,"class_name":"班级 A","display_name":"学生 A1","id":2,"role":"student","username":"student_a1"}}
+
+
+======================================================================
+14-student-download: GET /api/materials/7/download → 200
+--- Request ---
+GET /api/materials/7/download HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=.eJwdjTsOwjAQBe-ytQsSSwhcQgoaIFIKPo1l8EaJCHbYXSMRxN0xlE-jmfcGOyLdXcAgYIQSKnBJOvtE4j4GMKWC6-CYbe_BFHkwtVbiDTODatLTzF9QR2QcG-oOeFzpdYununrMG9mdl5tXsa33aQEKKA6YJZbkf3cKEiP9u-XnC9nKLpo.aru62g.yohFmg09yWi9pq4afOsZrITzsvE
+
+
+--- Response ---
+HTTP/1.1 200 OK
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:22 GMT
+Connection: close
+Content-Disposition: attachment; filename=download-proof.md
+Content-Type: application/octet-stream
+Content-Length: 72
+Last-Modified: Tue, 29 Sep 2026 13:19:21 GMT
+Cache-Control: no-store
+Expires: Tue, 29 Sep 2026 13:19:22 GMT
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Vary: Cookie
+
+﻿# 原文件下载验收
+中文内容与原始字节保持一致。
+
+
+======================================================================
+15-student-upload-denied: POST /api/materials/upload → 403
+--- Request ---
+POST /api/materials/upload HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=.eJwdjTsOwjAQBe-ytQsSSwhcQgoaIFIKPo1l8EaJCHbYXSMRxN0xlE-jmfcGOyLdXcAgYIQSKnBJOvtE4j4GMKWC6-CYbe_BFHkwtVbiDTODatLTzF9QR2QcG-oOeFzpdYununrMG9mdl5tXsa33aQEKKA6YJZbkf3cKEiP9u-XnC9nKLpo.aru62g.yohFmg09yWi9pq4afOsZrITzsvE
+Content-Type: multipart/form-data; boundary=CampusClawBoundaryfa67f4e24fbf80b70a01
+Content-Length: 345
+
+--CampusClawBoundaryfa67f4e24fbf80b70a01
+Content-Disposition: form-data; name="csrf_token"
+
+Dz3z0dbe3oesepSrhWeXB3CfeYPDq6StNZ9Hy1MPOu8
+--CampusClawBoundaryfa67f4e24fbf80b70a01
+Content-Disposition: form-data; name="file"; filename="student.txt"
+Content-Type: application/octet-stream
+
+denied
+--CampusClawBoundaryfa67f4e24fbf80b70a01--
+
+--- Response ---
+HTTP/1.1 403 FORBIDDEN
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:22 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 70
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+
+{"error":"学生仅可查看本班材料，不能执行写入操作"}
+
+
+======================================================================
+16-student-cross-class: GET /api/materials/3/download → 404
+--- Request ---
+GET /api/materials/3/download HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=.eJwdjTsOwjAQBe-ytQsSSwhcQgoaIFIKPo1l8EaJCHbYXSMRxN0xlE-jmfcGOyLdXcAgYIQSKnBJOvtE4j4GMKWC6-CYbe_BFHkwtVbiDTODatLTzF9QR2QcG-oOeFzpdYununrMG9mdl5tXsa33aQEKKA6YJZbkf3cKEiP9u-XnC9nKLpo.aru62g.yohFmg09yWi9pq4afOsZrITzsvE
+
+
+--- Response ---
+HTTP/1.1 404 NOT FOUND
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:22 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 43
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+
+{"error":"材料不存在或不可访问"}
+
+
+======================================================================
+17-student-logout: POST /logout → 302
+--- Request ---
+POST /logout HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=.eJwdjTsOwjAQBe-ytQsSSwhcQgoaIFIKPo1l8EaJCHbYXSMRxN0xlE-jmfcGOyLdXcAgYIQSKnBJOvtE4j4GMKWC6-CYbe_BFHkwtVbiDTODatLTzF9QR2QcG-oOeFzpdYununrMG9mdl5tXsa33aQEKKA6YJZbkf3cKEiP9u-XnC9nKLpo.aru62g.yohFmg09yWi9pq4afOsZrITzsvE
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 54
+
+csrf_token=Dz3z0dbe3oesepSrhWeXB3CfeYPDq6StNZ9Hy1MPOu8
+--- Response ---
+HTTP/1.1 302 FOUND
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:23 GMT
+Connection: close
+Content-Type: text/html; charset=utf-8
+Content-Length: 199
+Location: /login
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+Set-Cookie: campusclaw_session=; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; HttpOnly; Path=/; SameSite=Lax
+
+<!doctype html>
+<html lang=en>
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to the target URL: <a href="/login">/login</a>. If not, click the link.
+
+
+======================================================================
+18-revoked-download: GET /api/materials/7/download → 401
+--- Request ---
+GET /api/materials/7/download HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=.eJwdjTsOwjAQBe-ytQsSSwhcQgoaIFIKPo1l8EaJCHbYXSMRxN0xlE-jmfcGOyLdXcAgYIQSKnBJOvtE4j4GMKWC6-CYbe_BFHkwtVbiDTODatLTzF9QR2QcG-oOeFzpdYununrMG9mdl5tXsa33aQEKKA6YJZbkf3cKEiP9u-XnC9nKLpo.aru62g.yohFmg09yWi9pq4afOsZrITzsvE
+
+
+--- Response ---
+HTTP/1.1 401 UNAUTHORIZED
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:23 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 25
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+Set-Cookie: campusclaw_session=; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; HttpOnly; Path=/; SameSite=Lax
+
+{"error":"请先登录"}
+

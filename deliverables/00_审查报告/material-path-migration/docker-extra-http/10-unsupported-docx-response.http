@@ -1,0 +1,14 @@
+HTTP/1.1 400 BAD REQUEST
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:21 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 56
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+
+{"error":"仅支持 UTF-8 编码的 txt 和 md 文件"}

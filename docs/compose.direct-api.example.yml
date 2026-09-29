@@ -1,0 +1,7 @@
+# For the separate api/db architecture shown in the assignment screenshot ONLY.
+# This is not an override for this repository's app/SQLite deployment.
+# Verify the API actually listens on 0.0.0.0:8000 before use.
+services:
+  api:
+    ports:
+      - "127.0.0.1:18000:8000"

@@ -1,0 +1,10 @@
+POST /logout HTTP/1.1
+Host: 127.0.0.1:8080
+User-Agent: CampusClaw-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: [REDACTED]
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 54
+
+csrf_token=[REDACTED]

@@ -1,0 +1,21 @@
+POST /api/materials/upload HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=.eJwljMsKwjAQRf9l1llUxCLZ-aaFIgjduAkhGWmwJs1MUqTivxtwec_h3A-oCemlPfoEMlFGATqnQc1I7IIHWQswo2ZWzoJclcH0UCk8sTg498fZXlt9stUbt7cYO24WbM0hVxe_7HfWbeqG1328GxBAYcQSJdRmQCogM9L_9_sD03QugA.aru62Q.rtc6M7SoRFG1epl1ruDm0GY17_g
+Content-Type: multipart/form-data; boundary=CampusClawBoundary5209fb9a2167d473e1c1
+Content-Length: 417
+
+--CampusClawBoundary5209fb9a2167d473e1c1
+Content-Disposition: form-data; name="csrf_token"
+
+FUDvdOJaEd0xe8RqqMsIzeJcCu0GnzBAdi56Is3UqZc
+--CampusClawBoundary5209fb9a2167d473e1c1
+Content-Disposition: form-data; name="file"; filename="download-proof.md"
+Content-Type: application/octet-stream
+
+﻿# 原文件下载验收
+中文内容与原始字节保持一致。
+
+--CampusClawBoundary5209fb9a2167d473e1c1--

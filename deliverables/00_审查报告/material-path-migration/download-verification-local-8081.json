@@ -1,0 +1,62 @@
+{
+  "base": "http://127.0.0.1:8081",
+  "downloads": [
+    {
+      "id": 1,
+      "class_id": 1,
+      "title": "A 班 · SDD 与规约驱动开发导学",
+      "file_path": "1/seed-sdd-guide.md",
+      "status": 200,
+      "bytes_match": true,
+      "content_disposition": "attachment; filename=sdd-guide.md"
+    },
+    {
+      "id": 2,
+      "class_id": 1,
+      "title": "A 班 · HTTP 登录实验任务",
+      "file_path": "1/seed-http-lab.txt",
+      "status": 200,
+      "bytes_match": true,
+      "content_disposition": "attachment; filename=http-lab.txt"
+    },
+    {
+      "id": 3,
+      "class_id": 2,
+      "title": "B 班 · 独立教学材料",
+      "file_path": "2/seed-b-class.md",
+      "status": 200,
+      "bytes_match": true,
+      "content_disposition": "attachment; filename=b-class.md"
+    },
+    {
+      "id": 4,
+      "class_id": 1,
+      "title": "浏览器网络验收材料",
+      "file_path": "1/69428f905f4440d6b95208f3e9d9ef7c.txt",
+      "status": 200,
+      "bytes_match": true,
+      "content_disposition": "attachment; filename=browser-upload.txt"
+    },
+    {
+      "id": 5,
+      "class_id": 1,
+      "title": "浏览器网络验收材料",
+      "file_path": "1/d2f7dc606d564130878b5cf2b7df6a75.txt",
+      "status": 200,
+      "bytes_match": true,
+      "content_disposition": "attachment; filename=browser-upload.txt"
+    },
+    {
+      "id": 6,
+      "class_id": 1,
+      "title": "download-proof",
+      "file_path": "1/2ad9c00b4fa947028bcb9291b64da169.md",
+      "status": 200,
+      "bytes_match": true,
+      "content_disposition": "attachment; filename=download-proof.md"
+    }
+  ],
+  "anonymous_download_status": 401,
+  "teacher_cross_class_download_status": 404,
+  "all_authorized_downloads_ok": true
+}

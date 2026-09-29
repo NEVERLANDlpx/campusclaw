@@ -1,0 +1,10 @@
+POST /login HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=eyJjc3JmX3Rva2VuIjoiek94dUs4c3dMbVZVYzhtaDhCcjFGM3dqa2thSDZfSEZyYlJkVlRnMF9sZyJ9.aru62g.qpfUga_MJkiXmKEnEJLPpiB_7CE
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 97
+
+username=student_a1&password=Campus%402026&csrf_token=zOxuK8swLmVUc8mh8Br1F3wjkkaH6_HFrbRdVTg0_lg

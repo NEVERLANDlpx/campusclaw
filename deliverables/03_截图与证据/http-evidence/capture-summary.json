@@ -1,0 +1,22 @@
+{
+  "captured_at": "2026-09-29T08:17:12.763090+00:00",
+  "identity": {
+    "class_id": 1,
+    "class_name": "∞‡º∂ A",
+    "display_name": "ΩÃ ¶ A",
+    "id": 1,
+    "role": "teacher",
+    "username": "teacher_a"
+  },
+  "responses": {
+    "00-login-page": 200,
+    "01-login-success": 302,
+    "02-current-user": 200,
+    "03-logout": 302,
+    "04-replay-after-logout": 401,
+    "05-login-before-failure": 200,
+    "06-login-failure": 401,
+    "07-health": 200
+  },
+  "old_cookie_revoked": true
+}

@@ -1,0 +1,7 @@
+GET /api/materials?class_id=2 HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=.eJwljMsKwjAQRf9l1llUxCLZ-aaFIgjduAkhGWmwJs1MUqTivxtwec_h3A-oCemlPfoEMlFGATqnQc1I7IIHWQswo2ZWzoJclcH0UCk8sTg498fZXlt9stUbt7cYO24WbM0hVxe_7HfWbeqG1328GxBAYcQSJdRmQCogM9L_9_sD03QugA.aru62Q.rtc6M7SoRFG1epl1ruDm0GY17_g
+

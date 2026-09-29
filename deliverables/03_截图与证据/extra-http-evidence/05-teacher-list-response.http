@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Server: Werkzeug/3.1.3 Python/3.13.5
+Date: Tue, 29 Sep 2026 08:41:10 GMT
+Content-Type: application/json
+Content-Length: 704
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+Connection: close
+
+{"materials":[{"class_id":1,"created_at":"2026-09-29 08:38:05","id":5,"original_name":"browser-upload.txt","size_bytes":83,"title":"浏览器网络验收材料","uploader":"教师 A"},{"class_id":1,"created_at":"2026-09-29 08:37:27","id":4,"original_name":"browser-upload.txt","size_bytes":83,"title":"浏览器网络验收材料","uploader":"教师 A"},{"class_id":1,"created_at":"2026-09-29 08:16:50","id":2,"original_name":"http-lab.txt","size_bytes":200,"title":"A 班 · HTTP 登录实验任务","uploader":"教师 A"},{"class_id":1,"created_at":"2026-09-29 08:16:50","id":1,"original_name":"sdd-guide.md","size_bytes":225,"title":"A 班 · SDD 与规约驱动开发导学","uploader":"教师 A"}]}

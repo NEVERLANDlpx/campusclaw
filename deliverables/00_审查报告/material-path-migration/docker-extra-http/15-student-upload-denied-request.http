@@ -1,0 +1,19 @@
+POST /api/materials/upload HTTP/1.1
+Host: 127.0.0.1:8082
+User-Agent: CampusClaw-Extra-Evidence/1.0
+Accept: */*
+Connection: close
+Cookie: campusclaw_session=.eJwdjTsOwjAQBe-ytQsSSwhcQgoaIFIKPo1l8EaJCHbYXSMRxN0xlE-jmfcGOyLdXcAgYIQSKnBJOvtE4j4GMKWC6-CYbe_BFHkwtVbiDTODatLTzF9QR2QcG-oOeFzpdYununrMG9mdl5tXsa33aQEKKA6YJZbkf3cKEiP9u-XnC9nKLpo.aru62g.yohFmg09yWi9pq4afOsZrITzsvE
+Content-Type: multipart/form-data; boundary=CampusClawBoundaryfa67f4e24fbf80b70a01
+Content-Length: 345
+
+--CampusClawBoundaryfa67f4e24fbf80b70a01
+Content-Disposition: form-data; name="csrf_token"
+
+Dz3z0dbe3oesepSrhWeXB3CfeYPDq6StNZ9Hy1MPOu8
+--CampusClawBoundaryfa67f4e24fbf80b70a01
+Content-Disposition: form-data; name="file"; filename="student.txt"
+Content-Type: application/octet-stream
+
+denied
+--CampusClawBoundaryfa67f4e24fbf80b70a01--

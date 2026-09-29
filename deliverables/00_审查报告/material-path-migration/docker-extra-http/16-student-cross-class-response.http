@@ -1,0 +1,14 @@
+HTTP/1.1 404 NOT FOUND
+Server: gunicorn
+Date: Tue, 29 Sep 2026 13:19:22 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 43
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: same-origin
+Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'
+Cache-Control: no-store
+Vary: Cookie
+
+{"error":"材料不存在或不可访问"}
