@@ -136,3 +136,7 @@ Docker实际启动/重建验收在本次环境未执行（没有Docker程序）�
 材料详情中的下载按钮对本班教师/学生都可用；GET下载API复用会话认证、查询层班级过滤及真实文件路径限制，附件返回原始字节。uploads没有公共静态映射。
 上传仍只接受UTF-8 txt/md；PDF/Word/图片等未实现解析。
 直接浏览器访问API：先登录，再在同一域名下打开/api/me或/api/materials。地址栏是GET，上传须使用页面表单或带CSRF的POST。
+
+## 第四课规约变更
+
+`openspec/changes/add-traceable-vector-retrieval/` 是第四课待实施规约：设计按班级隔离的知识切片、Qdrant 向量索引、keyword/vector/hybrid 检索和可追溯问答。本项目当前仍是 Flask + SQLite；该 change 尚未实现完整 RAG 服务，也未部署 Qdrant 或调用生成模型。
