@@ -1,0 +1,99 @@
+{
+  "captured_at": "2026-10-27T04:07:18.467Z",
+  "started_at": "2026-10-27T04:06:44.478Z",
+  "status": "failed",
+  "base": "http://127.0.0.1:8080",
+  "browser": "155.0.8059.85",
+  "screenshot": null,
+  "failure_screenshot": "D:\\PKU\\course\\互联网\\campusclaw\\output\\teacher-settings-browser\\teacher-prompt-skill-settings-failure-2026-10-27T04-06-44-478Z.png",
+  "assertions": {
+    "teacher_login_and_permissions": true,
+    "learning_tutor_selected": true,
+    "template_options": [
+      "通用 AI 对话模板",
+      "课程知识库问答模板",
+      "学习辅导助手模板",
+      "课程工具助手模板"
+    ],
+    "template_editor_values_distinct": true,
+    "failed_save_button_recovered": true,
+    "logout_completed": true
+  },
+  "page_errors": [],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (NOT FOUND)",
+    "Failed to load resource: the server responded with a status of 400 (BAD REQUEST)"
+  ],
+  "restoration": {
+    "attempted": true,
+    "succeeded": true,
+    "verified": true
+  },
+  "failure": {
+    "name": "TimeoutError",
+    "message": "locator.selectOption: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#assistant-app-select')\u001b[22m\n\u001b[2m    - locator resolved to <select aria-label=\"选择 AI 应用\" id=\"assistant-app-select\"></select>\u001b[22m\n\u001b[2m  - attempting select option action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and enabled\u001b[22m\n\u001b[2m      - did not find some options\u001b[22m\n\u001b[2m    - retrying select option action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and enabled\u001b[22m\n\u001b[2m      - did not find some options\u001b[22m\n\u001b[2m    - retrying select option action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible and enabled\u001b[22m\n\u001b[2m       - did not find some options\u001b[22m\n\u001b[2m     - retrying select option action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+    "stack": "locator.selectOption: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#assistant-app-select')\u001b[22m\n\u001b[2m    - locator resolved to <select aria-label=\"选择 AI 应用\" id=\"assistant-app-select\"></select>\u001b[22m\n\u001b[2m  - attempting select option action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and enabled\u001b[22m\n\u001b[2m      - did not find some options\u001b[22m\n\u001b[2m    - retrying select option action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and enabled\u001b[22m\n\u001b[2m      - did not find some options\u001b[22m\n\u001b[2m    - retrying select option action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible and enabled\u001b[22m\n\u001b[2m       - did not find some options\u001b[22m\n\u001b[2m     - retrying select option action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n    at selectTutor (D:\\PKU\\course\\互联网\\campusclaw\\scripts\\browser_teacher_settings_validation.cjs:48:18)\n    at async main (D:\\PKU\\course\\互联网\\campusclaw\\scripts\\browser_teacher_settings_validation.cjs:172:5)"
+  },
+  "api_results": [
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/prompt-templates",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/skills",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "pathname": "/api/assistant/apps/3",
+      "status": 400
+    },
+    {
+      "method": "PUT",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/prompt-templates",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/skills",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/1",
+      "status": 200
+    }
+  ]
+}

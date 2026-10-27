@@ -1,0 +1,55 @@
+{
+  "captured_at": "2026-10-27T04:59:46.519Z",
+  "started_at": "2026-10-27T04:59:13.445Z",
+  "status": "failed",
+  "mode": "success",
+  "base": "http://127.0.0.1:8080",
+  "browser": "155.0.8059.85",
+  "screenshot": "D:\\PKU\\course\\互联网\\campusclaw\\output\\mcp-browser\\mcp-success-2026-10-27T04-59-13-445Z.png",
+  "assertions": {
+    "teacher_login_and_mcp_management_visible": true,
+    "concurrent_connect_prevented": true,
+    "real_tools_and_schema_visible": [
+      "lookup_course_glossary",
+      "formula_hint"
+    ]
+  },
+  "page_errors": [],
+  "api_results": [
+    {
+      "method": "GET",
+      "pathname": "/api/mcp/servers",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/mcp/servers/1/tools",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "pathname": "/api/mcp/servers/1/connect",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/mcp/servers",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/mcp/servers/1/tools",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "pathname": "/api/assistant/skills/3/tools",
+      "status": 200
+    }
+  ],
+  "failure": {
+    "name": "TimeoutError",
+    "message": "page.waitForResponse: Timeout 30000ms exceeded while waiting for event \"response\"",
+    "stack": "page.waitForResponse: Timeout 30000ms exceeded while waiting for event \"response\"\n    at main (D:\\PKU\\course\\互联网\\campusclaw\\scripts\\browser_mcp_validation.cjs:92:40)"
+  }
+}

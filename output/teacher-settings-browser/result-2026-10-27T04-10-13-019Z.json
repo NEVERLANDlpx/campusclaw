@@ -1,0 +1,330 @@
+{
+  "captured_at": "2026-10-27T04:10:22.003Z",
+  "started_at": "2026-10-27T04:10:13.019Z",
+  "status": "passed",
+  "base": "http://127.0.0.1:8080",
+  "browser": "155.0.8059.85",
+  "screenshot": "D:\\PKU\\course\\互联网\\campusclaw\\output\\teacher-settings-browser\\teacher-prompt-skill-settings-2026-10-27T04-10-13-019Z.png",
+  "failure_screenshot": null,
+  "assertions": {
+    "teacher_login_and_permissions": true,
+    "learning_tutor_selected": true,
+    "template_options": [
+      "通用 AI 对话模板",
+      "课程知识库问答模板",
+      "学习辅导助手模板",
+      "课程工具助手模板"
+    ],
+    "template_editor_values_distinct": true,
+    "failed_save_button_recovered": true,
+    "successful_save_persisted_after_refresh": true,
+    "skill_cards_opened": [
+      "解题引导",
+      "知识库引用与证据约束",
+      "课程术语与公式工具辅助"
+    ],
+    "skill_enablement_and_binding_persisted_then_restored": true,
+    "page_errors": [],
+    "expected_http_errors": [
+      {
+        "method": "PUT",
+        "pathname": "/api/assistant/apps/3",
+        "status": 400
+      }
+    ],
+    "unexpected_http_errors": [],
+    "console_messages_recorded": true,
+    "required_api_writes_observed": true,
+    "logout_completed": true
+  },
+  "page_errors": [],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (NOT FOUND)",
+    "Failed to load resource: the server responded with a status of 400 (BAD REQUEST)"
+  ],
+  "http_errors": [
+    {
+      "method": "PUT",
+      "pathname": "/api/assistant/apps/3",
+      "status": 400
+    }
+  ],
+  "restoration": {
+    "attempted": true,
+    "succeeded": true,
+    "verified": true
+  },
+  "failure": null,
+  "api_results": [
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/prompt-templates",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/skills",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/1",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "pathname": "/api/assistant/apps/3",
+      "status": 400
+    },
+    {
+      "method": "PUT",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/prompt-templates",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/skills",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "pathname": "/api/assistant/skills/1",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "pathname": "/api/assistant/apps/3/skills",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/skills",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/prompt-templates",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/skills",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "pathname": "/api/assistant/skills/1",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "pathname": "/api/assistant/apps/3/skills",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/skills",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "pathname": "/api/assistant/skills/2",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "pathname": "/api/assistant/apps/3/skills",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/skills",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/skills",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/prompt-templates",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "pathname": "/api/assistant/skills/2",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "pathname": "/api/assistant/apps/3/skills",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/skills",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "pathname": "/api/assistant/skills/3",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "pathname": "/api/assistant/apps/3/skills",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/skills",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/prompt-templates",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/skills",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "pathname": "/api/assistant/skills/3",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "pathname": "/api/assistant/apps/3/skills",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/skills",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/assistant/apps/3",
+      "status": 200
+    }
+  ]
+}

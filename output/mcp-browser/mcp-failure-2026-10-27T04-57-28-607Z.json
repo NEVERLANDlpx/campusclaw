@@ -1,0 +1,46 @@
+{
+  "captured_at": "2026-10-27T04:57:39.065Z",
+  "started_at": "2026-10-27T04:57:28.607Z",
+  "status": "failed",
+  "mode": "failure",
+  "base": "http://127.0.0.1:8080",
+  "browser": "155.0.8059.85",
+  "screenshot": "D:\\PKU\\course\\互联网\\campusclaw\\output\\mcp-browser\\mcp-failure-2026-10-27T04-57-28-607Z.png",
+  "assertions": {
+    "teacher_login_and_mcp_management_visible": true,
+    "concurrent_connect_prevented": true
+  },
+  "page_errors": [],
+  "api_results": [
+    {
+      "method": "GET",
+      "pathname": "/api/mcp/servers",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/mcp/servers/1/tools",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "pathname": "/api/mcp/servers/1/connect",
+      "status": 503
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/mcp/servers",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "pathname": "/api/mcp/servers/1/tools",
+      "status": 200
+    }
+  ],
+  "failure": {
+    "name": "AssertionError",
+    "message": "diagnostic network error is visible",
+    "stack": "AssertionError [ERR_ASSERTION]: diagnostic network error is visible\n    at main (D:\\PKU\\course\\互联网\\campusclaw\\scripts\\browser_mcp_validation.cjs:62:7)"
+  }
+}

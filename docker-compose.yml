@@ -6,8 +6,20 @@ services:
     env_file: .env
     environment:
       SECRET_KEY: ${SECRET_KEY:?Run python scripts/configure.py first}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-${SECRET_KEY:?Run python scripts/configure.py first}}
       DATABASE_PATH: /app/data/app.db
       UPLOAD_ROOT: /app/uploads
+      EMBEDDING_BASE_URL: ${EMBEDDING_BASE_URL:?Set EMBEDDING_BASE_URL in .env}
+      EMBEDDING_API_KEY: ${EMBEDDING_API_KEY:?Set EMBEDDING_API_KEY in .env}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:?Set EMBEDDING_MODEL in .env}
+      EMBEDDING_DIM: ${EMBEDDING_DIM:?Set EMBEDDING_DIM in .env}
+      CHAT_BASE_URL: ${CHAT_BASE_URL:?Set CHAT_BASE_URL in .env}
+      CHAT_API_KEY: ${CHAT_API_KEY:?Set CHAT_API_KEY in .env}
+      CHAT_MODEL: ${CHAT_MODEL:?Set CHAT_MODEL in .env}
+      MCP_SERVICE_TOKEN: ${MCP_SERVICE_TOKEN:?Set MCP_SERVICE_TOKEN in .env}
+      MCP_ALLOWED_HOSTS: ${MCP_ALLOWED_HOSTS:-mcp-tools,localhost,localhost.localdomain,127.0.0.1,::1}
+      MCP_MAX_TOOL_ROUNDS: ${MCP_MAX_TOOL_ROUNDS:-3}
+      MCP_MAX_TOTAL_CALLS: ${MCP_MAX_TOTAL_CALLS:-5}
     volumes:
       - ./data:/app/data
       - ./uploads:/app/uploads
@@ -17,4 +29,22 @@ services:
       timeout: 5s
       retries: 5
       start_period: 15s
+    restart: unless-stopped
+    depends_on:
+      mcp-tools:
+        condition: service_healthy
+  mcp-tools:
+    build: .
+    command: ["python", "mcp_server.py"]
+    env_file: .env
+    environment:
+      MCP_SERVICE_TOKEN: ${MCP_SERVICE_TOKEN:?Set MCP_SERVICE_TOKEN in .env}
+      MCP_PUBLIC_URL: ${MCP_PUBLIC_URL:-http://mcp-tools:8090}
+      MCP_PORT: 8090
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8090/health',timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
     restart: unless-stopped

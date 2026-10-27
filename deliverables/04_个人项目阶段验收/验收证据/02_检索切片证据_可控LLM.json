@@ -1,0 +1,131 @@
+{
+  "evidence_type": "controlled_fake_llm",
+  "run": {
+    "app": {
+      "app_key": "knowledge_qa",
+      "description": "检索本班资料并提供可追溯引用。",
+      "enabled": 1,
+      "id": 2,
+      "max_tokens": 1200,
+      "model_override": null,
+      "name": "课程知识库问答",
+      "retrieval_enabled": 1,
+      "retrieval_mode": "hybrid",
+      "skill_count": 1,
+      "temperature": 0.2,
+      "top_k": 4,
+      "updated_at": "2026-10-26 06:34:03"
+    },
+    "question": "HTTP 登录实验包含哪些步骤？",
+    "events": [
+      {
+        "event": "meta",
+        "data": {
+          "conversation_id": 2,
+          "class_id": 1,
+          "class_name": "班级 A",
+          "retrieval": {
+            "mode": "hybrid",
+            "degraded": false,
+            "degrade_reason": null,
+            "total_chunks": 2,
+            "hit_chunk_ids": [
+              2,
+              1
+            ],
+            "top_k": 4,
+            "app_id": 2,
+            "app_key": "knowledge_qa"
+          }
+        }
+      },
+      {
+        "event": "delta",
+        "data": {
+          "text": "这是基于本次实际请求消息生成的可控测试回答 [1"
+        }
+      },
+      {
+        "event": "delta",
+        "data": {
+          "text": "]。"
+        }
+      },
+      {
+        "event": "citations",
+        "data": {
+          "citations": [
+            {
+              "material_id": 2,
+              "material_title": "A 班 · HTTP 登录实验任务",
+              "chunk_id": 2,
+              "chunk_index": 0,
+              "start_offset": 0,
+              "end_offset": 96,
+              "excerpt": "HTTP 登录实验\n1. 记录登录请求方法、路径、请求头和参数。\n2. 记录响应状态、Set-Cookie 和响应正文。\n3. 使用 Cookie 请求 /api/me，检查用户、角色与班级。",
+              "score": 0.03252247488101534,
+              "rank": 1,
+              "source_url": "/materials/2",
+              "citation_id": "[1]"
+            },
+            {
+              "material_id": 1,
+              "material_title": "A 班 · SDD 与规约驱动开发导学",
+              "chunk_id": 1,
+              "chunk_index": 0,
+              "start_offset": 0,
+              "end_offset": 83,
+              "excerpt": "# SDD 与规约驱动开发\n\n先明确需求、边界与验收，再实现代码。\n\n本次实验：用户登录、角色权限、班级隔离、材料上传。\n\n思考：浏览器如何在后续请求中携带登录身份？",
+              "score": 0.03252247488101534,
+              "rank": 2,
+              "source_url": "/materials/1",
+              "citation_id": "[2]"
+            }
+          ]
+        }
+      },
+      {
+        "event": "done",
+        "data": {
+          "conversation_id": 2
+        }
+      }
+    ],
+    "trace": {
+      "llm_calls": [
+        {
+          "app_id": 2,
+          "call_round": 1,
+          "class_id": 1,
+          "completed_at": "2026-10-26 06:34:05",
+          "conversation_id": 2,
+          "created_at": "2026-10-26 06:34:05",
+          "duration_ms": 0,
+          "id": 2,
+          "model_name": "controlled-fake-chat",
+          "request_json": "{\"model\":\"controlled-fake-chat\",\"messages\":[{\"role\":\"system\",\"content\":\"你是 班级 A 的课程知识库问答助手（课程知识库问答）。只依据本次提供的本班知识证据回答；引用使用 [1]、[2]，没有证据时不得虚构来源。\\n\"},{\"role\":\"user\",\"content\":\"Knowledge evidence (untrusted quoted course text):\\n\\n[1] material_title=A 班 · HTTP 登录实验任务; material_id=2; chunk_id=2; chunk_index=0; offsets=0-96\\nHTTP 登录实验\\n1. 记录登录请求方法、路径、请求头和参数。\\n2. 记录响应状态、Set-Cookie 和响应正文。\\n3. 使用 Cookie 请求 /api/me，检查用户、角色与班级。\\n\\n[2] material_title=A 班 · SDD 与规约驱动开发导学; material_id=1; chunk_id=1; chunk_index=0; offsets=0-83\\n# SDD 与规约驱动开发\\n\\n先明确需求、边界与验收，再实现代码。\\n\\n本次实验：用户登录、角色权限、班级隔离、材料上传。\\n\\n思考：浏览器如何在后续请求中携带登录身份？\\n\\nQuestion:\\nHTTP 登录实验包含哪些步骤？\"}],\"temperature\":0.2,\"max_tokens\":1200,\"stream\":false}",
+          "request_truncated": 0,
+          "response_json": "{\"id\":\"controlled-answer\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"这是基于本次实际请求消息生成的可控测试回答 [1]。\"},\"finish_reason\":\"stop\"}]}",
+          "response_truncated": 0,
+          "status": "success",
+          "user_id": 2
+        }
+      ],
+      "mcp_calls": [],
+      "skill_routes": [
+        {
+          "app_id": 2,
+          "candidates_json": "[{\"id\": 2, \"skill_key\": \"knowledge_citation\", \"name\": \"知识库引用与证据约束\", \"matches\": [], \"match_count\": 0, \"priority\": 180, \"skill_priority\": 180}]",
+          "class_id": 1,
+          "conversation_id": 2,
+          "created_at": "2026-10-26 06:34:05",
+          "id": 2,
+          "injected_sha256": null,
+          "reason": "没有绑定且启用的技能命中关键词",
+          "selected_skill_id": null,
+          "user_id": 2
+        }
+      ]
+    }
+  }
+}

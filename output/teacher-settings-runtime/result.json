@@ -1,0 +1,38 @@
+{
+  "captured_local_date": "2026-10-27",
+  "credential_free": true,
+  "llm_mode": "controlled fake client for deterministic request/answer assertions",
+  "skill_runs": [
+    {
+      "conversation_id": 1,
+      "llm_call_id": 1,
+      "skill_key": "solving_guidance",
+      "full_instruction_in_request": true,
+      "answer_assertion": "contains staged reasoning and result checking"
+    },
+    {
+      "conversation_id": 2,
+      "llm_call_id": 2,
+      "skill_key": "knowledge_citation",
+      "full_instruction_in_request": true,
+      "answer_assertion": "uses the real evidence citation marker [1]"
+    },
+    {
+      "conversation_id": 3,
+      "llm_call_id": 3,
+      "skill_key": "course_tool_assistant",
+      "full_instruction_in_request": true,
+      "answer_assertion": "contains terminology explanation and formula guidance"
+    }
+  ],
+  "official_mcp_run": {
+    "conversation_id": 1,
+    "llm_call_id": 1,
+    "mcp_call_id": 1,
+    "skill_key": "course_tool_assistant",
+    "tool_ref": "lookup_course_glossary@course-tools",
+    "status": "success",
+    "tool_declarations_sent": true,
+    "transport": "official MCP SDK Streamable HTTP on a local dynamic port"
+  }
+}

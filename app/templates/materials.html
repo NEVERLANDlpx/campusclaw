@@ -3,8 +3,64 @@
 <div class="page-heading"><div><span class="eyebrow dark">CLASS KNOWLEDGE</span><h1>教学材料<span class="tag">{{ g.user.class_name }}</span></h1><p class="muted">{% if g.user.role=='teacher' %}把好材料留在班级，让每一次分享都成为积累。{% else %}属于你的班级资料，随时打开，安心学习。{% endif %}</p></div><span class="permission-badge">{{ '教师工作台 · 可上传与管理' if g.user.role=='teacher' else '学生工作台 · 只读访问' }}</span></div>
 <section class="welcome-banner"><div><span class="banner-label">YOUR CLASS, YOUR KNOWLEDGE</span><h2>{{ '知识在这里汇聚。' if g.user.role=='teacher' else '从这里，开始今天的学习。' }}</h2><p>{{ '上传资料后，系统自动解析入库，本班学生刷新即可阅读。' if g.user.role=='teacher' else '你可以查看本班教学材料和解析正文，其他班级内容保持隔离。' }}</p></div><div class="banner-art"><span>文</span><span>知</span><span>✦</span></div></section>
 <section class="stats"><article><span class="stat-symbol">▤</span><div><p>本班材料</p><strong>{{ rows|length }} <small>份</small></strong></div><span class="stat-note">来自数据库</span></article><article><span class="stat-symbol green">✓</span><div><p>已入库内容</p><strong>{{ rows|length }} <small>条</small></strong></div><span class="stat-note">正文可阅读</span></article><article><span class="stat-symbol amber">◇</span><div><p>访问范围</p><strong>{{ g.user.class_name }}</strong></div><span class="stat-note">服务端隔离</span></article></section>
+<section class="panel assistant-panel featured-assistant" id="ai-assistant" data-class-name="{{ g.user.class_name }}" data-role="{{ g.user.role }}">
+  <div class="panel-heading"><div><h3>AI 学习助手</h3><p>回答基于{{ g.user.class_name }}知识库 · 引用来自真实切片</p></div><span class="tag">Hybrid Retrieval</span></div>
+  <div class="assistant-grid">
+    <div class="chat-surface">
+      <div class="class-scope">回答基于{{ g.user.class_name }}知识库</div>
+      <label for="assistant-app-select">AI 应用</label>
+      <select id="assistant-app-select" aria-label="选择 AI 应用"></select>
+      <p class="muted app-description" id="assistant-app-description"></p>
+      <div class="chat-output" id="assistant-answer" aria-live="polite">输入一个和本班材料有关的问题，助手会边生成边显示回答。</div>
+      <form class="assistant-form" id="assistant-form">
+        <input id="assistant-question" name="question" placeholder="例如：CampusClaw 的知识检索在没有资料依据时应该怎么处理？" autocomplete="off" required>
+        <button class="button primary" type="submit">发送 <span>→</span></button>
+      </form>
+      <div class="form-result" id="assistant-status" role="status"></div>
+    </div>
+    <aside class="citation-list">
+      <h3>依据 / 引用来源</h3>
+      <div id="assistant-citations" class="empty-citations">暂无引用</div>
+    </aside>
+  </div>
+</section>
 <div class="materials-grid {% if g.user.role=='student' %}student-grid{% endif %}"><section class="panel library-panel"><div class="panel-heading"><div><h3>材料库 <span id="material-count">{{ rows|length }}</span></h3><p>本班共享资料 · 最近上传优先</p></div><a class="text-link" href="/materials">刷新列表 ↻</a></div><form class="search-bar" role="search" action="/materials" method="get"><label for="material-search">搜索材料</label><input id="material-search" name="q" value="{{ request.args.get('q','') }}" placeholder="按标题或文件名搜索"></form><div class="material-list" id="material-list">{% for row in rows %}<article class="material-row"><span class="file-icon">{{ 'MD' if row.original_name.lower().endswith('.md') else 'TXT' }}</span><div class="material-info"><a href="/materials/{{ row.id }}">{{ row.title }}</a><p>{{ row.uploader }} <span>·</span> {{ row.created_at[:16] }} UTC <span>·</span> {{ row.size_bytes }} B</p></div><span class="ingested">已入库</span><a class="open-link" href="/materials/{{ row.id }}" aria-label="阅读{{ row.title }}">↗</a></article>{% else %}<div class="empty-state"><h3>还没有材料</h3><p>{{ '上传第一份教学材料，开始积累。' if g.user.role=='teacher' else '教师上传后，本班材料将在这里出现。' }}</p></div>{% endfor %}</div><div class="panel-footer">◇ 列表仅展示 {{ g.user.class_name }} 的材料，每次刷新重新查询数据库。</div></section>
 {% if g.user.role=='teacher' %}<section class="panel upload-panel"><div class="panel-heading"><div><h3>上传教学材料</h3><p>分享给 {{ g.user.class_name }} 的同学</p></div><span class="upload-symbol">↑</span></div><form id="upload-form" enctype="multipart/form-data" action="/api/materials/upload" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><label class="drop-zone" for="file"><span>↑</span><strong id="file-label">选择一份教学材料</strong><small>TXT / Markdown · UTF-8 · 最大 2 MiB</small><input type="file" name="file" id="file" accept=".txt,.md" required></label><label for="title">材料标题 <small>选填</small></label><input name="title" id="title" placeholder="默认使用文件名" maxlength="120"><button class="button primary full" type="submit">上传并入库 <span>→</span></button><div id="upload-result" class="form-result" role="status"></div></form><p class="upload-hint">文件保存 → 文本解析 → 知识库入库</p></section>{% endif %}</div>
 {% if request.args.get('uploaded') %}<div class="notice success" role="status">✓ 上传成功，材料及知识条目已保存，本班学生可查看。</div>{% endif %}
 {% if request.args.get('deleted') %}<div class="notice success" role="status">✓ 材料及知识条目已删除。</div>{% endif %}
+{% if g.user.role=='teacher' %}
+<section class="panel assistant-settings">
+  <div class="panel-heading"><div><h3>教师 Prompt 与技能</h3><p>保存后从下一轮提问开始生效</p></div></div>
+  <div class="settings-body">
+    <label for="assistant-prompt">当前应用 Prompt</label>
+    <textarea id="assistant-prompt" rows="5"></textarea>
+    <div class="config-row"><label>Temperature <input id="assistant-temperature" type="number" min="0" max="2" step="0.1"></label><label>Top-K <input id="assistant-top-k" type="number" min="1" max="12"></label><label class="skill-toggle"><input id="assistant-retrieval" type="checkbox"> <span>启用知识库</span></label></div>
+    <label for="assistant-template-select">从模板库复制</label><select id="assistant-template-select"><option value="">不应用模板</option></select>
+    <p class="muted" id="assistant-bound-skills">绑定 Skill：加载中…</p>
+    <button class="button primary" id="save-assistant-settings" type="button">保存设置 <span>→</span></button>
+    <div class="form-result" id="assistant-settings-status" role="status"></div>
+  </div>
+</section>
+<section class="panel assistant-settings">
+  <div class="panel-heading"><div><h3>Skill 与 MCP</h3><p>Skill 是受控指令；上传内容不会作为代码执行</p></div></div>
+  <div class="settings-body"><div id="assistant-skill-list" class="management-list"></div>
+    <section id="assistant-skill-detail" class="skill-detail" aria-live="polite" hidden>
+      <div class="skill-detail-heading"><div><strong id="assistant-skill-detail-name"></strong><small id="assistant-skill-detail-source"></small></div><span id="assistant-skill-detail-key"></span></div>
+      <p id="assistant-skill-detail-description" class="muted"></p>
+      <label class="skill-toggle"><input id="assistant-skill-enabled" type="checkbox"> <span>启用此 Skill</span></label>
+      <label for="assistant-skill-keywords">触发关键词</label><input id="assistant-skill-keywords">
+      <small class="muted">按空格、逗号或分号分隔；使用连续子串匹配，近义表达请分别配置。</small>
+      <label for="assistant-skill-content">完整受控指令</label><textarea id="assistant-skill-content" rows="6"></textarea>
+      <label class="skill-toggle"><input id="assistant-skill-bound" type="checkbox"> <span>绑定到当前 AI 应用</span></label>
+      <fieldset class="skill-tools"><legend>绑定已发现的 MCP 工具</legend><div id="assistant-skill-tools" class="tool-binding-list"><p class="muted">请先连接 MCP 服务器并发现工具。</p></div></fieldset>
+      <button class="button primary" id="save-skill-settings" type="button">保存 Skill 设置</button>
+      <div class="form-result" id="assistant-skill-status" role="status"></div>
+    </section>
+    <form id="skill-upload-form"><label>上传 Markdown Skill <input type="file" name="file" accept=".md,.markdown" required></label><label>触发关键词 <input name="trigger_keywords" placeholder="术语 公式 计算"></label><button class="button" type="submit">上传 Skill</button></form>
+    <hr><div class="section-heading"><strong>MCP 服务器</strong><small>连接后显示真实发现的工具与参数 Schema</small></div><div id="mcp-server-list" class="management-list"></div>
+    <form id="mcp-server-form"><label>服务器名称 <input name="name" value="course-tools" required></label><label>端点 <input name="endpoint_url" value="http://mcp-tools:8090/mcp" required></label><label>令牌环境变量名 <input name="token_env_key" value="MCP_SERVICE_TOKEN" required></label><button class="button" type="submit">登记 MCP 服务器</button></form>
+    <div class="form-result" id="management-status" role="status"></div>
+  </div>
+</section>
+{% endif %}
 {% endblock %}

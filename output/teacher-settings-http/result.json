@@ -1,0 +1,43 @@
+{
+  "captured_at": "2026-10-26T16:27:35.617769+00:00",
+  "base_url": "http://127.0.0.1:8080",
+  "results": [
+    {
+      "step": "token_login",
+      "status": 200
+    },
+    {
+      "step": "template_registry",
+      "status": 200,
+      "names": [
+        "通用 AI 对话模板",
+        "课程知识库问答模板",
+        "学习辅导助手模板",
+        "课程工具助手模板"
+      ]
+    },
+    {
+      "step": "prompt_and_parameters_persist",
+      "status": 200
+    },
+    {
+      "step": "skill_toggle_solving_guidance",
+      "status": 200
+    },
+    {
+      "step": "skill_toggle_knowledge_citation",
+      "status": 200
+    },
+    {
+      "step": "skill_toggle_course_tool_assistant",
+      "status": 200
+    },
+    {
+      "step": "skill_binding_persist",
+      "status": 200
+    }
+  ],
+  "settings_restored": true,
+  "restoration_errors": [],
+  "contains_credentials": false
+}
